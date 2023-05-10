@@ -1,13 +1,10 @@
 import React from 'react';
-import style from './MainPage.module.scss';
-import { PageWrapper } from '../../Common/PageWrapper';
+import PageWrapper from '../../common/PageWrapper';
 
-export const MainPage = () => {
-  return (
-    <PageWrapper>
-      <div className={style.content}>
-        <h1>Main</h1>
-      </div>
-    </PageWrapper>
-  );
-};
+const MainPage = () => (
+  <PageWrapper>
+    <h1>Main content</h1>
+  </PageWrapper>
+);
+
+export default MainPage;

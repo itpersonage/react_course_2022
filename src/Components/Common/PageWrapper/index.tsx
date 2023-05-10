@@ -1,14 +1,14 @@
 import React from 'react';
+import Footer from '../Footer';
+import Header from '../Header';
 import style from './PageWrapper.module.scss';
-import { Header } from '../Header';
-import { Footer } from '../Footer';
 
-export const PageWrapper: React.FC = ({ children }) => {
-  return (
-    <div className={style.PageWrapper}>
-      <Header />
-      {children}
-      <Footer />
-    </div>
-  );
-};
+const PageWrapper: React.FC = ({ children }) => (
+  <div className={style.page_wrapper}>
+    <Header />
+    <main className={style.content}>{children}</main>
+    <Footer />
+  </div>
+);
+
+export default PageWrapper;

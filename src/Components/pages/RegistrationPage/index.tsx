@@ -4,14 +4,16 @@ import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import PageWrapper from '../../common/PageWrapper';
 
-const AuthPage = () => (
+const RegistrationPage = () => (
   <PageWrapper>
-    <Form title="Авторизация">
+    <Form title="Регистрация">
+      <Input title="Name" id="name" />
       <Input title="Email" id="email" />
       <Input title="Password" id="password" />
-      <Button title="Войти" onClick={() => console.log('auth')} />
+      <Input title="Repeat Password" id="repeatPassword" />
+      <Button title="Регистрация" onClick={() => console.log('registration')} />
     </Form>
   </PageWrapper>
 );
 
-export default AuthPage;
+export default RegistrationPage;

@@ -1,7 +1,17 @@
 import React from 'react';
-import './App.css';
-import { MainContainers } from './Container/MainContainer';
+import MainContainer from './containers/MainContainer';
+import AuthContainer from './containers/AuthContainer';
+import RegistrationContainer from './containers/RegistrationContainer';
 
-const App = () => <MainContainers />;
+const App = () => {
+  console.log('APP => start');
+  return (
+    <>
+      <MainContainer />
+      <AuthContainer />
+      <RegistrationContainer />
+    </>
+  );
+};
 
 export default App;

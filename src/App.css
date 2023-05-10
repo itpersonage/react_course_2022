@@ -6,14 +6,15 @@
   align-items: center;
 }
 
-/* .name_wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-.form_input {
+/* .form_inputs {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-} 
+  justify-content: space-between;
+  height: 60px;
+} */
+
+.itemImage {
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+}

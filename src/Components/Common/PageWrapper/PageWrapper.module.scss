@@ -1,6 +1,20 @@
-.PageWrapper {
-  margin: 0 auto;
+@import '../../../assets/style/vars.scss';
+
+.page_wrapper {
+  width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+    'header'
+    'content'
+    'footer';
+  grid-template-rows: 80px auto 60px;
+}
+
+.content {
+  background-color: $main-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
