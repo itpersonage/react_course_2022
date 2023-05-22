@@ -7,9 +7,9 @@ const App = () => {
   console.log('APP => start');
   return (
     <>
-      <MainContainer />
+      {/* <MainContainer /> */}
       <AuthContainer />
-      <RegistrationContainer />
+      {/* <RegistrationContainer /> */}
     </>
   );
 };

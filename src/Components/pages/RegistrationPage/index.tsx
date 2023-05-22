@@ -7,11 +7,11 @@ import PageWrapper from '../../common/PageWrapper';
 const RegistrationPage = () => (
   <PageWrapper>
     <Form title="Регистрация">
-      <Input title="Name" id="name" />
+      {/* <Input title="Name" id="name" />
       <Input title="Email" id="email" />
       <Input title="Password" id="password" />
       <Input title="Repeat Password" id="repeatPassword" />
-      <Button title="Регистрация" onClick={() => console.log('registration')} />
+      <Button title="Регистрация" onClick={() => console.log('registration')} /> */}
     </Form>
   </PageWrapper>
 );
