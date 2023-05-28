@@ -4,7 +4,6 @@ import AuthContainer from './containers/AuthContainer';
 import RegistrationContainer from './containers/RegistrationContainer';
 
 const App = () => {
-  console.log('APP => start');
   return (
     <>
       {/* <MainContainer /> */}

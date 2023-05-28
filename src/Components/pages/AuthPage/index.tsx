@@ -7,6 +7,9 @@ import PageWrapper from '../../common/PageWrapper';
 const AuthPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const submitHandler = () => {
+    console.log(email, password);
+  };
 
   return (
     <PageWrapper>
@@ -27,7 +30,7 @@ const AuthPage = () => {
           setValue={setPassword}
           type="password"
         />
-        <Button title="Войти" onClick={() => console.log('auth')} />
+        <Button title="Войти" onClick={submitHandler} />
       </Form>
     </PageWrapper>
   );
