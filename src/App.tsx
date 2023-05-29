@@ -6,8 +6,8 @@ import RegistrationContainer from './containers/RegistrationContainer';
 const App = () => {
   return (
     <>
-      {/* <MainContainer /> */}
-      <AuthContainer />
+      <MainContainer />
+      {/* <AuthContainer /> */}
       {/* <RegistrationContainer /> */}
     </>
   );

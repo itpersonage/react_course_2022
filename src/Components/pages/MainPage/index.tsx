@@ -1,9 +1,12 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import PageWrapper from '../../common/PageWrapper';
+import { data } from '../../../helpers';
+import { UserList } from './UserList/insde';
 
 const MainPage = () => (
   <PageWrapper>
-    <h1>Main content</h1>
+    <UserList data={data} />
   </PageWrapper>
 );
 
