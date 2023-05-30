@@ -13,7 +13,7 @@ type InputPropsType = {
 const Input = ({ title, id, placeholder, value, setValue, type }: InputPropsType) => {
   const handler = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-    console.log(`${event.target.id}  -  ${event.target.value}`);
+    // console.log(`${event.target.id}  -  ${event.target.value}`);
   };
   return (
     <label className={style.wrapper} htmlFor={id}>

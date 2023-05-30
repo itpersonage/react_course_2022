@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../../common/Button';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
@@ -10,6 +10,7 @@ const AuthPage = () => {
   const submitHandler = () => {
     console.log(email, password);
   };
+  useEffect(() => console.log('Change email'), [email]);
 
   return (
     <PageWrapper>
