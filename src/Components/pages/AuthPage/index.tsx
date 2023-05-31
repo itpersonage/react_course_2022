@@ -7,10 +7,17 @@ import PageWrapper from '../../common/PageWrapper';
 const AuthPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [hasError, setHasError] = useState(false);
   const submitHandler = () => {
     console.log(email, password);
   };
-  useEffect(() => console.log('Change email'), [email]);
+  useEffect(() => {
+    if (password.length < 10 && password.length > 0) {
+      setHasError(true);
+    } else {
+      setHasError(false);
+    }
+  }, [password]);
 
   return (
     <PageWrapper>
@@ -31,6 +38,12 @@ const AuthPage = () => {
           setValue={setPassword}
           type="password"
         />
+        {hasError && (
+          <div>
+            <span> пароль должен быть больше 10 символов</span>
+          </div>
+        )}
+
         <Button title="Войти" onClick={submitHandler} />
       </Form>
     </PageWrapper>
