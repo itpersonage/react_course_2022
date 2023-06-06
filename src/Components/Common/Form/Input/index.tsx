@@ -3,7 +3,7 @@ import style from './Input.module.scss';
 
 type InputPropsType = {
   title: string;
-  id: string;
+  id?: string;
   placeholder: string;
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
