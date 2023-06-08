@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { ChangeEvent } from 'react';
 import style from './Input.module.scss';
 
 type InputPropsType = {
   title: string;
   id?: string;
-  placeholder: string;
+  placeholder?: string;
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
   type: 'text' | 'password';
@@ -18,7 +19,7 @@ const Input = ({ title, id, placeholder, value, setValue, type }: InputPropsType
   return (
     <label className={style.wrapper} htmlFor={id}>
       <span>{title}</span>
-      <input id={id} placeholder={placeholder} value={value} type={type} onChange={handler} />
+      <input id={id} value={value} type={type} onChange={handler} />
     </label>
   );
 };

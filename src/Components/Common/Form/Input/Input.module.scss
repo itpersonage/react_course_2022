@@ -7,12 +7,24 @@
   height: 100px;
   width: 100%;
 
-  & > span {
+  span {
     font-family: $text;
     font-size: $text-size;
   }
 
-  & > input {
+  input {
     font-size: $title-size;
+  }
+
+  button {
+    margin: 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 310px;
+    bottom: 37px;
+    border: none;
+    background-color: #fff;
   }
 }

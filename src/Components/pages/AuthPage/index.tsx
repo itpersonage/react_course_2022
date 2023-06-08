@@ -3,6 +3,7 @@ import Button from '../../common/Button';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import PageWrapper from '../../common/PageWrapper';
+import PasswordInput from '../../common/Form/PasswordInput';
 
 const AuthPage = () => {
   const [email, setEmail] = useState('');
@@ -30,13 +31,12 @@ const AuthPage = () => {
           setValue={setEmail}
           type="text"
         />
-        <Input
+        <PasswordInput
           title="Password"
           id="password"
           placeholder="Enter password"
           value={password}
           setValue={setPassword}
-          type="password"
         />
         {hasError && (
           <div>

@@ -7,8 +7,8 @@ const App = () => {
   return (
     <>
       {/* <MainContainer /> */}
-      {/* <AuthContainer /> */}
-      <RegistrationContainer />
+      <AuthContainer />
+      {/* <RegistrationContainer /> */}
     </>
   );
 };
