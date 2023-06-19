@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Button from '../../common/Button';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
-import PageWrapper from '../../common/PageWrapper';
 import PasswordInput from '../../common/Form/PasswordInput';
 
 const RegistrationPage = () => {
@@ -29,55 +28,53 @@ const RegistrationPage = () => {
   });
 
   return (
-    <PageWrapper>
-      <Form title="Регистрация">
-        <Input
-          title="Name"
-          id="Name"
-          placeholder="Enter name"
-          value={name}
-          setValue={setName}
-          type="text"
-        />
-        <Input
-          title="Email"
-          id="email"
-          placeholder="Enter email"
-          value={email}
-          setValue={setEmail}
-          type="text"
-        />
-        <PasswordInput
-          title="Password"
-          id="password"
-          placeholder="Enter password"
-          value={password}
-          setValue={setPassword}
-        />
-        {hasError && (
-          <div>
-            <span> пароль должен быть больше 10 символов</span>
-          </div>
-        )}
-        <PasswordInput
-          title="repeat password"
-          id="repeat password"
-          placeholder="repeatPassword"
-          value={confirmPassword}
-          setValue={setConfirmPassword}
-        />
+    <Form title="Регистрация">
+      <Input
+        title="Name"
+        id="Name"
+        placeholder="Enter name"
+        value={name}
+        setValue={setName}
+        type="text"
+      />
+      <Input
+        title="Email"
+        id="email"
+        placeholder="Enter email"
+        value={email}
+        setValue={setEmail}
+        type="text"
+      />
+      <PasswordInput
+        title="Password"
+        id="password"
+        placeholder="Enter password"
+        value={password}
+        setValue={setPassword}
+      />
+      {hasError && (
+        <div>
+          <span> пароль должен быть больше 10 символов</span>
+        </div>
+      )}
+      <PasswordInput
+        title="repeat password"
+        id="repeat password"
+        placeholder="repeatPassword"
+        value={confirmPassword}
+        setValue={setConfirmPassword}
+      />
 
-        {hasErrorConfirm && (
-          <div>
-            <span>пароли не совпадают</span>
-          </div>
-        )}
-        <Button
-          title="Регистрация"
-          onClick={() => console.log(name, email, password, confirmPassword)}
-        />
-      </Form>
-    </PageWrapper>
+      {hasErrorConfirm && (
+        <div>
+          <span>пароли не совпадают</span>
+        </div>
+      )}
+      <Button
+        title="Регистрация"
+        onClick={() => console.log(name, email, password, confirmPassword)}
+      />
+    </Form>
   );
 };
 

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Button from '../../common/Button';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
-import PageWrapper from '../../common/PageWrapper';
 import PasswordInput from '../../common/Form/PasswordInput';
 
 const AuthPage = () => {
@@ -21,32 +20,30 @@ const AuthPage = () => {
   }, [password]);
 
   return (
-    <PageWrapper>
-      <Form title="Авторизация">
-        <Input
-          title="Email"
-          id="email"
-          placeholder="Enter email"
-          value={email}
-          setValue={setEmail}
-          type="text"
-        />
-        <PasswordInput
-          title="Password"
-          id="password"
-          placeholder="Enter password"
-          value={password}
-          setValue={setPassword}
-        />
-        {hasError && (
-          <div>
-            <span> пароль должен быть больше 10 символов</span>
-          </div>
-        )}
+    <Form title="Авторизация">
+      <Input
+        title="Email"
+        id="email"
+        placeholder="Enter email"
+        value={email}
+        setValue={setEmail}
+        type="text"
+      />
+      <PasswordInput
+        title="Password"
+        id="password"
+        placeholder="Enter password"
+        value={password}
+        setValue={setPassword}
+      />
+      {hasError && (
+        <div>
+          <span> пароль должен быть больше 10 символов</span>
+        </div>
+      )}
 
-        <Button title="Войти" onClick={submitHandler} />
-      </Form>
-    </PageWrapper>
+      <Button title="Войти" onClick={submitHandler} />
+    </Form>
   );
 };
 
