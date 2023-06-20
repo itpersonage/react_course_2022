@@ -14,7 +14,9 @@ type OneUserPropsType = {
 const OneUserPage = ({ userInfo }: OneUserPropsType) => {
   const navigate = useNavigate();
   const handler = () => {
-    navigate(-1);
+    navigate('/users', { state: { isOpen: true } });
+    // можно передать { state: { isOpen: true }, replace } чтобы не писалась история
+    // Link и Navigate взаимо заменяемые сущности
   };
 
   return (
@@ -22,7 +24,9 @@ const OneUserPage = ({ userInfo }: OneUserPropsType) => {
       <h1>userInfo</h1>
       <h2>{userInfo?.name}</h2>
       <h2>{userInfo?.age}</h2>
-      <Link to="/users">go to USER LIST</Link>
+      <Link to="/users" state={{ isOpen: true }}>
+        go to USER LIST
+      </Link>
       <button type="button" onClick={handler}>
         back
       </button>
