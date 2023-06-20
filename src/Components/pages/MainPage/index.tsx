@@ -5,7 +5,7 @@ import { UserList } from './UserList/insde';
 import Button from '../../common/Button';
 
 const MainPage = () => {
-  const [listVisible, setListVisible] = useState(true);
+  const [listVisible, setListVisible] = useState(false);
   const handler = () => {
     // setListVisible(!listVisible);
     setListVisible((prev) => !prev);
