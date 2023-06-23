@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../common/Button';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import PasswordInput from '../../common/Form/PasswordInput';
+import { setUserData } from '../../../store/userData';
+import { TState } from '../../../store/configureStore';
 
 const AuthPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [hasError, setHasError] = useState(false);
+  const dispatch = useDispatch();
+  const data = useSelector((state: TState) => state.userData);
+
   const submitHandler = () => {
-    console.log(email, password);
+    if (password.length > 0 && hasError === false) {
+      dispatch(setUserData({ email, token: 'OK' }));
+    }
   };
+
   useEffect(() => {
     if (password.length < 10 && password.length > 0) {
       setHasError(true);
