@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../common/Button';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
@@ -12,11 +13,13 @@ const AuthPage = () => {
   const [password, setPassword] = useState('');
   const [hasError, setHasError] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const data = useSelector((state: TState) => state.userData);
 
   const submitHandler = () => {
     if (password.length > 0 && hasError === false) {
-      dispatch(setUserData({ email, token: 'OK' }));
+      dispatch(setUserData({ email, password, token: 'OK' }));
+      console.log(data);
     }
   };
 
@@ -27,6 +30,12 @@ const AuthPage = () => {
       setHasError(false);
     }
   }, [password]);
+
+  useEffect(() => {
+    if (data.email) {
+      navigate('/');
+    }
+  });
 
   return (
     <Form title="Авторизация">

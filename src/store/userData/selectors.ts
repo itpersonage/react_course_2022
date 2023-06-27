@@ -8,4 +8,5 @@ const getUserData = (state: TState) => state.userData;
 // Разные варианты записи
 
 export const getUserEmail = createSelector(getUserData, ({ email }) => email);
+export const getUserPassword = createSelector(getUserData, ({ password }) => password);
 export const getUserToken = createSelector(getUserData, ({ token }) => token);

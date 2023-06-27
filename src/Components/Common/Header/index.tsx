@@ -26,8 +26,9 @@ const Header = () => {
 
         {token && <span>{email}</span>}
         {token ? (
-          // eslint-disable-next-line prettier/prettier
-          <button type="button" onClick={logOutHeandler}>LogOut</button>
+          <button type="button" onClick={logOutHeandler}>
+            LogOut
+          </button>
         ) : (
           <>
             <li>
