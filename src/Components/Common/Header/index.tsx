@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import style from './Header.module.scss';
-import { getUserEmail, getUserToken } from '../../../store/userData/selectors';
-import { resetUserData } from '../../../store/userData';
+import { getUserEmail, getUserToken } from '../../../store/auth/selectors';
+import { resetUserData } from '../../../store/auth';
 
 const Header = () => {
   const dispatch = useDispatch();

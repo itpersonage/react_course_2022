@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { data } from '../../../helpers';
 import { UserList } from './UserList/insde';
 import Button from '../../common/Button';
 
@@ -22,7 +21,7 @@ const MainPage = () => {
 
   return (
     <>
-      {listVisible && <UserList data={data} />}
+      {listVisible && <UserList />}
       {/* {listVisible ? <UserList data={data} /> : <h2>Empty List</h2>} */}
       <Button title={listVisible ? 'hide list' : 'show list'} onClick={handler} />
     </>

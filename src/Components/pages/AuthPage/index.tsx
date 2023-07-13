@@ -5,7 +5,7 @@ import Button from '../../common/Button';
 import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import PasswordInput from '../../common/Form/PasswordInput';
-import { setUserData } from '../../../store/userData';
+import { setUserData } from '../../../store/auth';
 import { TState } from '../../../store/configureStore';
 
 const AuthPage = () => {

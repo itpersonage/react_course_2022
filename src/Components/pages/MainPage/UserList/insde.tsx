@@ -1,23 +1,20 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { UserListItem } from './UserListItem';
+import { TState } from '../../../../store/configureStore';
 
-type UserListType = {
-  data: {
-    id: number;
-    name: string;
-    age: string;
-  }[];
-};
+export const UserList = () => {
+  const data = useSelector((state: TState) => state.getUsers);
+  console.log(data);
 
-export const UserList = ({ data }: UserListType) => {
   return (
     <>
       <h1>UserList</h1>
-      <ul>
+      {/* <ul>
         {data.map((el) => (
-          <UserListItem key={el.id} name={el.name} age={el.age} />
+          <UserListItem key={el.id} name={el.name} />
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 };
