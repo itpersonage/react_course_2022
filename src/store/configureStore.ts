@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { userDataNameReducer, userDataReducer } from './auth';
-import { getUserDataNameReducerApi, getUserDataReducerApi } from './users';
+import userDataApiSlice from './users';
 
 export const store = configureStore({
   reducer: {
     [userDataNameReducer]: userDataReducer,
-    [getUserDataNameReducerApi]: getUserDataReducerApi,
+    reducer: userDataApiSlice,
   },
   devTools: true,
 });
 
-export type TState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

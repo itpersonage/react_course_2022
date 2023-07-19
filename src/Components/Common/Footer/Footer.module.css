@@ -1,0 +1,7 @@
+.footer {
+  grid-area: footer;
+  background-color: #272b33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=Footer.module.css.map */

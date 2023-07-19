@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+  width: 100%;
+}
+.wrapper span {
+  font-family: "Poiret One", cursive;
+  font-size: 18px;
+}
+.wrapper input {
+  font-size: 36px;
+}
+.wrapper button {
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 310px;
+  bottom: 37px;
+  border: none;
+  background-color: #fff;
+}/*# sourceMappingURL=Input.module.css.map */

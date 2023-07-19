@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { type TState } from '../configureStore';
+import { type RootState } from '../configureStore';
 
-const getUserData = (state: TState) => state.userData;
+const getUserData = (state: RootState) => state.userData;
 // чтобы постоянно не писать стрелочную функцию
 
 // const getUserEmail = createSelector(getUserData, (state) => state.email);

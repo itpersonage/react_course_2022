@@ -1,23 +1,53 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+/* eslint-disable no-param-reassign */
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-type IUserDataApiState = {
-  data: any[];
+type TUser = {
+  id: number;
+  name: string;
 };
 
-const initialState: IUserDataApiState = { data: [] };
+export const getUser = createAsyncThunk('posts/getPosts', async (data, thunkApi) => {
+  try {
+    const response = await axios.get<TUser[]>(
+      'https://jsonplaceholder.typicode.com/users?_limit=10'
+    );
+    return response.data;
+  } catch (error: any) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+});
 
-const slice = createSlice({
-  name: 'getUsers',
+interface IUserState {
+  loading: boolean;
+  error: null | string;
+  data: TUser[];
+}
+
+const initialState: IUserState = {
+  loading: false,
+  error: null,
+  data: [],
+};
+
+const userDataApiSlice = createSlice({
+  name: 'getUsersAPI',
   initialState,
-  reducers: {
-    getUserDataApi(state, { payload }: PayloadAction<[]>) {
-      console.log(state);
-      console.log(payload);
-
-      return { data: [...payload] };
-    },
+  reducers: {},
+  extraReducers(builder) {
+    builder
+      .addCase(getUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getUser.fulfilled, (state, action: PayloadAction<TUser[]>) => {
+        state.loading = false;
+        state.data = action.payload;
+      })
+      .addCase(getUser.rejected, (state, action: PayloadAction<any>) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 
-export const { reducer: getUserDataReducerApi, name: getUserDataNameReducerApi, actions } = slice;
-export const { getUserDataApi } = actions;
+export default userDataApiSlice.reducer;

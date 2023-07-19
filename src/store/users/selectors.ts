@@ -1,12 +1,6 @@
-import { createSelector } from '@reduxjs/toolkit';
-import { type TState } from '../configureStore';
+import { useDispatch, useSelector } from 'react-redux';
+import type { TypedUseSelectorHook } from 'react-redux';
+import type { AppDispatch, RootState } from '../configureStore';
 
-const getUserData = (state: TState) => state.getUsers;
-console.log(getUserData);
-
-// чтобы постоянно не писать стрелочную функцию
-
-// const getUserEmail = createSelector(getUserData, (state) => state.email);
-// Разные варианты записи
-
-export const getUserDataApi = createSelector(getUserData, ({ data }) => data);
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

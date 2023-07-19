@@ -6,7 +6,7 @@ import Form from '../../common/Form';
 import Input from '../../common/Form/Input';
 import PasswordInput from '../../common/Form/PasswordInput';
 import { setUserData } from '../../../store/auth';
-import { TState } from '../../../store/configureStore';
+import { RootState } from '../../../store/configureStore';
 
 const AuthPage = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ const AuthPage = () => {
   const [hasError, setHasError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const data = useSelector((state: TState) => state.userData);
+  const data = useSelector((state: RootState) => state.userData);
 
   const submitHandler = () => {
     if (password.length > 0 && hasError === false) {
