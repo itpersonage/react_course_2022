@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type IUserDataApiState = {
-  data: [];
+  data: any[];
 };
 
 const initialState: IUserDataApiState = { data: [] };
