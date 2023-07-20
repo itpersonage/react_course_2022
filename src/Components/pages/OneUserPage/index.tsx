@@ -6,7 +6,8 @@ type OneUserPropsType = {
     | {
         id: number;
         name: string;
-        age: string;
+        email: string;
+        phone: string;
       }
     | undefined;
 };
@@ -23,7 +24,8 @@ const OneUserPage = ({ userInfo }: OneUserPropsType) => {
     <>
       <h1>userInfo</h1>
       <h2>{userInfo?.name}</h2>
-      <h2>{userInfo?.age}</h2>
+      <h2>{userInfo?.email}</h2>
+      <h2>{userInfo?.phone}</h2>
       <Link to="/users" state={{ isOpen: true }}>
         go to USER LIST
       </Link>

@@ -5,6 +5,8 @@ import axios from 'axios';
 type TUser = {
   id: number;
   name: string;
+  email: string;
+  phone: string;
 };
 
 export const getUser = createAsyncThunk('posts/getPosts', async (data, thunkApi) => {

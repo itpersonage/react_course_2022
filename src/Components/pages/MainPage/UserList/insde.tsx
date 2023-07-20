@@ -4,7 +4,6 @@ import { useAppSelector } from '../../../../store/users/selectors';
 
 export const UserList = () => {
   const { data } = useAppSelector((state) => state.reducer);
-  console.log(data);
 
   return (
     <>
